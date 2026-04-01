@@ -248,6 +248,7 @@ export default function LinktreeStyleProfile() {
   };
 
   const whatsappHref = `https://wa.me/${profile.contact.phone.replace(/[^\d]/g, "")}`;
+  const appFontStyle = { fontFamily: '"Poppins", sans-serif' };
 
   const quickLinks = [
     { href: whatsappHref, icon: <WhatsAppIcon className="h-5 w-5 text-[#7a5b47]" />, label: "WhatsApp" },
@@ -289,8 +290,11 @@ export default function LinktreeStyleProfile() {
   }
 
   return (
-    <div className="min-h-screen bg-[linear-gradient(180deg,#f8efe7_0%,#efe1d3_38%,#e3cdbb_100%)] px-3 py-4 font-[Poppins] sm:px-6 sm:py-10">
-      <div className="mx-auto max-w-md">
+    <div
+      className="min-h-screen bg-[linear-gradient(180deg,#f8efe7_0%,#efe1d3_38%,#e3cdbb_100%)] px-3 py-4 font-[Poppins] sm:px-6 sm:py-10"
+      style={appFontStyle}
+    >
+      <div className="mx-auto max-w-md sm:max-w-lg">
         <div className="relative overflow-hidden rounded-[28px] border border-[#e5d2c2] bg-[linear-gradient(180deg,rgba(255,249,243,0.98),rgba(244,232,220,0.96))] p-4 shadow-[0_20px_50px_rgba(125,95,72,0.14)] backdrop-blur-xl sm:rounded-[36px] sm:p-7 sm:shadow-[0_28px_75px_rgba(125,95,72,0.16)]">
           <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,252,248,0.72),rgba(236,220,205,0.22)_46%,transparent_74%)]" />
 
@@ -326,6 +330,7 @@ export default function LinktreeStyleProfile() {
                         value={loginForm.username}
                         onChange={(e) => setLoginForm({ ...loginForm, username: e.target.value })}
                         className="mt-1 block w-full rounded-xl border border-[#dcc2ae] bg-[#fffaf5] px-3 py-2.5 text-sm text-[#5f4333] shadow-[0_6px_16px_rgba(125,95,72,0.06)] outline-none focus:border-[#b89274] focus:ring-2 focus:ring-[#d9bda7]/45"
+                        style={appFontStyle}
                       />
                     </div>
                     <div>
@@ -338,12 +343,14 @@ export default function LinktreeStyleProfile() {
                         value={loginForm.password}
                         onChange={(e) => setLoginForm({ ...loginForm, password: e.target.value })}
                         className="mt-1 block w-full rounded-xl border border-[#dcc2ae] bg-[#fffaf5] px-3 py-2.5 text-sm text-[#5f4333] shadow-[0_6px_16px_rgba(125,95,72,0.06)] outline-none focus:border-[#b89274] focus:ring-2 focus:ring-[#d9bda7]/45"
+                        style={appFontStyle}
                       />
                     </div>
                     {loginError && <p className="text-xs text-red-600">{loginError}</p>}
                     <button
                       type="submit"
                       className="w-full rounded-xl bg-[linear-gradient(145deg,#b89274,#9f795d)] px-4 py-2.5 text-sm font-semibold text-[#fffaf5] shadow-[0_10px_22px_rgba(125,95,72,0.14)] transition duration-300 hover:-translate-y-0.5 hover:brightness-105"
+                      style={appFontStyle}
                     >
                       Log In
                     </button>
@@ -373,6 +380,7 @@ export default function LinktreeStyleProfile() {
                         value={eventData.title}
                         onChange={(e) => setEventData({ ...eventData, title: e.target.value })}
                         className="mt-1 block w-full rounded-xl border border-[#dcc2ae] bg-[#fffaf5] px-3 py-2.5 text-sm text-[#5f4333] shadow-[0_6px_16px_rgba(125,95,72,0.06)] outline-none focus:border-[#b89274] focus:ring-2 focus:ring-[#d9bda7]/45"
+                        style={appFontStyle}
                       />
                     </div>
 
@@ -386,6 +394,7 @@ export default function LinktreeStyleProfile() {
                         value={eventData.formLink}
                         onChange={(e) => setEventData({ ...eventData, formLink: e.target.value })}
                         className="mt-1 block w-full rounded-xl border border-[#dcc2ae] bg-[#fffaf5] px-3 py-2.5 text-sm text-[#5f4333] shadow-[0_6px_16px_rgba(125,95,72,0.06)] outline-none focus:border-[#b89274] focus:ring-2 focus:ring-[#d9bda7]/45"
+                        style={appFontStyle}
                       />
                     </div>
 
@@ -399,6 +408,7 @@ export default function LinktreeStyleProfile() {
                         value={eventData.info}
                         onChange={(e) => setEventData({ ...eventData, info: e.target.value })}
                         className="mt-1 block w-full rounded-xl border border-[#dcc2ae] bg-[#fffaf5] px-3 py-2.5 text-sm text-[#5f4333] shadow-[0_6px_16px_rgba(125,95,72,0.06)] outline-none focus:border-[#b89274] focus:ring-2 focus:ring-[#d9bda7]/45"
+                        style={appFontStyle}
                       />
                     </div>
 
@@ -407,6 +417,7 @@ export default function LinktreeStyleProfile() {
                       onClick={handleSaveWorkshop}
                       disabled={isSavingEvent}
                       className="mb-3 w-full rounded-xl bg-[linear-gradient(145deg,#b89274,#9f795d)] px-4 py-2.5 text-sm font-semibold text-[#fffaf5] shadow-[0_10px_22px_rgba(125,95,72,0.14)] transition duration-300 hover:-translate-y-0.5 hover:brightness-105 disabled:cursor-not-allowed disabled:opacity-70"
+                      style={appFontStyle}
                     >
                       {isSavingEvent ? "Saving..." : "Save workshop"}
                     </button>
@@ -425,6 +436,7 @@ export default function LinktreeStyleProfile() {
                         })
                       }
                       className="mb-3 w-full rounded-xl bg-[#f6eadf] px-4 py-2.5 text-sm font-semibold text-[#7d5b47] shadow-[0_8px_18px_rgba(125,95,72,0.08)] transition duration-300 hover:-translate-y-0.5 hover:bg-[#f1dfd1]"
+                      style={appFontStyle}
                     >
                       Clear workshop
                     </button>
@@ -433,6 +445,7 @@ export default function LinktreeStyleProfile() {
                       type="button"
                       onClick={handleLogout}
                       className="w-full rounded-xl bg-[linear-gradient(145deg,#b89274,#9f795d)] px-4 py-2.5 text-sm font-semibold text-[#fffaf5] shadow-[0_10px_22px_rgba(125,95,72,0.14)] transition duration-300 hover:-translate-y-0.5 hover:brightness-105"
+                      style={appFontStyle}
                     >
                       Logout
                     </button>
@@ -452,18 +465,18 @@ export default function LinktreeStyleProfile() {
               </div>
 
               <h1
-                className="mt-4 text-[1.7rem] font-bold tracking-[-0.03em] sm:mt-5 sm:text-[2.3rem]"
-                style={{ color: "#4f3729" }}
-              >
+  className="mt-4 text-[1.35rem] font-bold leading-none tracking-[-0.03em] sm:mt-5 sm:text-[1.95rem] sm:whitespace-nowrap"
+  style={{ ...appFontStyle, color: "#4f3729" }}
+>
                 {profile.name}
               </h1>
               
-              <p className="mt-2 text-[0.9rem] font-semibold uppercase tracking-[0.16em] text-[#8b6851] sm:text-base sm:tracking-[0.22em]">{profile.title}</p>
+              <p className="mt-2 text-[0.9rem] font-semibold uppercase tracking-[0.16em] text-[#8b6851] sm:text-base sm:tracking-[0.22em]" style={appFontStyle}>{profile.title}</p>
               
 
               <div className="mt-5 flex flex-wrap items-center justify-center gap-2">
-                <span className="rounded-full bg-[#efe0d1] px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.16em] text-[#7b5a46] shadow-[0_8px_16px_rgba(125,95,72,0.08)] ring-1 ring-[#ddc4b1]/60">Available for bookings</span>
-                <span className="rounded-full bg-[#f4e8dc] px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.16em] text-[#7b5a46] shadow-[0_8px_16px_rgba(125,95,72,0.07)] ring-1 ring-[#e3cdbb]/60">Online</span>
+                <span className="rounded-full bg-[#efe0d1] px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.16em] text-[#7b5a46] shadow-[0_8px_16px_rgba(125,95,72,0.08)] ring-1 ring-[#ddc4b1]/60" style={appFontStyle}>Available for bookings</span>
+                <span className="rounded-full bg-[#f4e8dc] px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.16em] text-[#7b5a46] shadow-[0_8px_16px_rgba(125,95,72,0.07)] ring-1 ring-[#e3cdbb]/60" style={appFontStyle}>Online</span>
               </div>
 
               <div className="mt-6 flex flex-wrap items-center justify-center gap-2.5 sm:gap-3">
@@ -493,6 +506,7 @@ export default function LinktreeStyleProfile() {
                     target={isMail ? "_self" : "_blank"}
                     rel="noreferrer"
                     className="group block overflow-hidden rounded-[24px] border border-[#e3cdbb] bg-[linear-gradient(180deg,rgba(255,248,241,0.98),rgba(241,227,214,0.96))] p-3.5 shadow-[0_14px_30px_rgba(125,95,72,0.10)] ring-1 ring-[#c8a98f]/12 transition duration-300 hover:-translate-y-1 hover:border-[#d5b79e] hover:shadow-[0_24px_42px_rgba(125,95,72,0.14)] sm:rounded-[28px] sm:p-4 sm:hover:-translate-y-1.5"
+                    style={appFontStyle}
                   >
                     <div className="flex items-start gap-3.5 sm:items-center sm:gap-4">
                       <IconWrapper dark>{card.icon}</IconWrapper>
@@ -501,23 +515,23 @@ export default function LinktreeStyleProfile() {
                         <div className="mb-1 flex items-center gap-2">
                           <h2
                             className="truncate text-base font-semibold sm:text-[1.05rem]"
-                            style={{ color: "#4f3729" }}
+                            style={{ ...appFontStyle, color: "#4f3729" }}
                           >
                             {card.label}
                           </h2>
                           {card.badge ? (
-                            <span className="rounded-full bg-[#ecd8c8] px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.16em] text-[#7e5d49] ring-1 ring-[#dcc2ae]/60">
+                            <span className="rounded-full bg-[#ecd8c8] px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.16em] text-[#7e5d49] ring-1 ring-[#dcc2ae]/60" style={appFontStyle}>
                               {card.badge}
                             </span>
                           ) : null}
                         </div>
                         {card.description ? (
-                          <p className="text-[0.92rem] leading-5 sm:text-sm" style={{ color: "#6f5442" }}>
+                          <p className="text-[0.92rem] leading-5 sm:text-sm" style={{ ...appFontStyle, color: "#6f5442" }}>
                             {card.description}
                           </p>
                         ) : null}
                         {card.value ? (
-                          <p className="mt-1 break-all text-[0.92rem] font-medium leading-5 sm:text-sm" style={{ color: "#7b5c49" }}>
+                          <p className="mt-1 break-all text-[0.92rem] font-medium leading-5 sm:text-sm" style={{ ...appFontStyle, color: "#7b5c49" }}>
                             {card.value}
                           </p>
                         ) : null}
