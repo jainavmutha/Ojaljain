@@ -458,7 +458,7 @@ export default function LinktreeStyleProfile() {
                 {profile.name}
               </h1>
               <p
-                className="mt-2 text-[0.9rem] font-semibold tracking-[0.16em] sm:text-base sm:tracking-[0.22em]"
+                className="mt-2 text-[1.05rem] font-semibold tracking-[0.16em] sm:text-[1.2rem] sm:tracking-[0.22em]"
                 style={{ color: "#4f3729" }}
               >
                 Ojal Jain
