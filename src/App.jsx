@@ -161,9 +161,6 @@ export default function LinktreeStyleProfile() {
 
     return {
       label: eventData.title,
-      description:
-        eventData.info.trim() || "Current workshop, event, or registration link",
-      value: eventData.formLink,
       href: eventData.formLink,
       icon: <CalendarIcon />,
       badge: "Live",
