@@ -235,7 +235,7 @@ export default function LinktreeStyleProfile() {
   const profile = {
     name: "Ojal Jain | Inner Lens",
     title: "Counselling Psychologist",
-    bio: "Helping people navigate life with more clarity, calm, and confidence.",
+   
     photo:
       "https://lh3.googleusercontent.com/d/19ISfHiNty5DbJYhm-50SSzv0f-YzQiqJ",
     contact: {
@@ -459,7 +459,7 @@ export default function LinktreeStyleProfile() {
               </h1>
               
               <p className="mt-2 text-[0.9rem] font-semibold uppercase tracking-[0.16em] text-[#8b6851] sm:text-base sm:tracking-[0.22em]">{profile.title}</p>
-              <p className="mt-3 max-w-full px-1 text-sm leading-6 text-[#6a4e3d] sm:max-w-[19rem] sm:px-0">{profile.bio}</p>
+              
 
               <div className="mt-5 flex flex-wrap items-center justify-center gap-2">
                 <span className="rounded-full bg-[#efe0d1] px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.16em] text-[#7b5a46] shadow-[0_8px_16px_rgba(125,95,72,0.08)] ring-1 ring-[#ddc4b1]/60">Available for bookings</span>
