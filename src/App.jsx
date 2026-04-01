@@ -233,7 +233,7 @@ export default function LinktreeStyleProfile() {
   }, [eventData]);
 
   const profile = {
-    name: "@_innerlens",
+    name: "Ojal Jain | Inner Lens",
     title: "Counselling Psychologist",
     bio: "Helping people navigate life with more clarity, calm, and confidence.",
     photo:
@@ -457,12 +457,7 @@ export default function LinktreeStyleProfile() {
               >
                 {profile.name}
               </h1>
-              <p
-                className="mt-2 text-[1.05rem] font-semibold tracking-[0.16em] sm:text-[1.2rem] sm:tracking-[0.22em]"
-                style={{ color: "#4f3729" }}
-              >
-                Ojal Jain
-              </p>
+              
               <p className="mt-2 text-[0.9rem] font-semibold uppercase tracking-[0.16em] text-[#8b6851] sm:text-base sm:tracking-[0.22em]">{profile.title}</p>
               <p className="mt-3 max-w-full px-1 text-sm leading-6 text-[#6a4e3d] sm:max-w-[19rem] sm:px-0">{profile.bio}</p>
 
