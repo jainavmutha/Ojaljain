@@ -3,6 +3,14 @@ import "@fontsource/poppins/500.css";
 import "@fontsource/poppins/600.css";
 import "@fontsource/poppins/700.css";
 
+import { useState, useEffect, useMemo } from "react";
+import { createClient } from "@supabase/supabase-js";
+
+const supabase = createClient(
+  "https://wwesjsjngjrazbtgujxl.supabase.co",
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Ind3ZXNqc2puZ2pyYXpidGd1anhsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzUwMjIwNzYsImV4cCI6MjA5MDU5ODA3Nn0.R_ZS2IqEVp1pTTuuKIC_EztcAlUcQ28W32kNCbvxu74"
+);
+
 function IconWrapper({ children, dark = false }) {
   return (
     <div
@@ -84,7 +92,6 @@ function ChevronRightIcon({ className = "h-5 w-5" }) {
   );
 }
 
-import { useState, useEffect, useMemo } from "react";
 
 export default function LinktreeStyleProfile() {
   const ADMIN_USERNAME = "ojaljain";
@@ -102,19 +109,43 @@ export default function LinktreeStyleProfile() {
   const [loginForm, setLoginForm] = useState({ username: "", password: "" });
   const [loginError, setLoginError] = useState("");
   const [eventData, setEventData] = useState(defaultEvent);
+  const [isLoadingEvent, setIsLoadingEvent] = useState(true);
+  const [isSavingEvent, setIsSavingEvent] = useState(false);
+  const [saveMessage, setSaveMessage] = useState("");
+
+  
 
   useEffect(() => {
-    const savedEvent = window.localStorage.getItem("link-app-event");
     const savedLoginState = window.localStorage.getItem("link-app-admin-auth");
 
-    if (savedEvent) {
+    async function loadEventFromSupabase() {
       try {
-        const parsed = JSON.parse(savedEvent);
-        setEventData({ ...defaultEvent, ...parsed });
+        const { data, error } = await supabase
+          .from("app_event")
+          .select("enabled, title, form_link, info")
+          .eq("id", "main")
+          .maybeSingle();
+
+        if (error) {
+          console.error("Could not load event from Supabase", error);
+        }
+
+        if (data) {
+          setEventData({
+            enabled: Boolean(data.enabled),
+            title: data.title || "",
+            formLink: data.form_link || "",
+            info: data.info || "",
+          });
+        }
       } catch (error) {
-        console.error("Could not parse saved event", error);
+        console.error("Could not load event from Supabase", error);
+      } finally {
+        setIsLoadingEvent(false);
       }
     }
+
+    loadEventFromSupabase();
 
     if (savedLoginState === "true") {
       setIsAdminLoggedIn(true);
@@ -122,8 +153,10 @@ export default function LinktreeStyleProfile() {
   }, []);
 
   useEffect(() => {
-    window.localStorage.setItem("link-app-event", JSON.stringify(eventData));
-  }, [eventData]);
+    if (!isLoadingEvent) {
+      window.localStorage.setItem("link-app-event", JSON.stringify(eventData));
+    }
+  }, [eventData, isLoadingEvent]);
 
   useEffect(() => {
     window.localStorage.setItem("link-app-admin-auth", String(isAdminLoggedIn));
@@ -150,6 +183,37 @@ export default function LinktreeStyleProfile() {
     setLoginForm({ username: "", password: "" });
     setLoginError("");
   }
+  async function handleSaveWorkshop() {
+    setIsSavingEvent(true);
+    setSaveMessage("");
+
+    try {
+      const payload = {
+        id: "main",
+        enabled: eventData.enabled,
+        title: eventData.title.trim(),
+        form_link: eventData.formLink.trim(),
+        info: eventData.info.trim(),
+      };
+
+      const { error } = await supabase.from("app_event").upsert(payload, {
+        onConflict: "id",
+      });
+
+      if (error) {
+        throw error;
+      }
+
+      setSaveMessage("Workshop saved across all devices");
+      window.setTimeout(() => setSaveMessage(""), 2500);
+    } catch (error) {
+      console.error("Could not save workshop", error);
+      setSaveMessage("Could not save workshop");
+      window.setTimeout(() => setSaveMessage(""), 2500);
+    } finally {
+      setIsSavingEvent(false);
+    }
+  }
 
   const workshopCard = useMemo(() => {
     const hasTitle = eventData.title.trim().length > 0;
@@ -164,6 +228,7 @@ export default function LinktreeStyleProfile() {
       href: eventData.formLink,
       icon: <CalendarIcon />,
       badge: "Live",
+      description: eventData.info,
     };
   }, [eventData]);
 
@@ -336,6 +401,21 @@ export default function LinktreeStyleProfile() {
                         className="mt-1 block w-full rounded-xl border border-[#dcc2ae] bg-[#fffaf5] px-3 py-2.5 text-sm text-[#5f4333] shadow-[0_6px_16px_rgba(125,95,72,0.06)] outline-none focus:border-[#b89274] focus:ring-2 focus:ring-[#d9bda7]/45"
                       />
                     </div>
+
+                    <button
+                      type="button"
+                      onClick={handleSaveWorkshop}
+                      disabled={isSavingEvent}
+                      className="mb-3 w-full rounded-xl bg-[linear-gradient(145deg,#b89274,#9f795d)] px-4 py-2.5 text-sm font-semibold text-[#fffaf5] shadow-[0_10px_22px_rgba(125,95,72,0.14)] transition duration-300 hover:-translate-y-0.5 hover:brightness-105 disabled:cursor-not-allowed disabled:opacity-70"
+                    >
+                      {isSavingEvent ? "Saving..." : "Save workshop"}
+                    </button>
+
+                    {saveMessage ? (
+                      <p className="mb-3 text-center text-xs font-medium text-[#7d5b47]">
+                        {saveMessage}
+                      </p>
+                    ) : null}
 
                     <button
                       type="button"
