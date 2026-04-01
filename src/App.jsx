@@ -465,9 +465,9 @@ export default function LinktreeStyleProfile() {
               </div>
 
               <h1
-  className="mt-4 text-[1.35rem] font-bold leading-none tracking-[-0.03em] sm:mt-5 sm:text-[1.95rem] sm:whitespace-nowrap"
-  style={{ ...appFontStyle, color: "#46658e" }}
->
+                className="mt-4 text-[clamp(1.05rem,6.4vw,1.35rem)] font-bold leading-[0.95] tracking-[-0.045em] min-[430px]:tracking-[-0.035em] sm:mt-5 sm:text-[1.95rem] sm:whitespace-nowrap"
+                style={{ ...appFontStyle, color: "#5a6f82" }}
+              >
                 {profile.name}
               </h1>
               
