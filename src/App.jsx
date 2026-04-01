@@ -17,8 +17,8 @@ function IconWrapper({ children, dark = false }) {
       className={[
         "flex items-center justify-center transition duration-300",
         dark
-          ? "h-12 w-12 rounded-[18px] bg-[linear-gradient(145deg,#cdb39b,#b89578)] text-[#fffaf5] shadow-[0_12px_28px_rgba(125,95,72,0.18)] ring-1 ring-[#f7ede3]/55 sm:h-14 sm:w-14 sm:rounded-[20px]"
-          : "h-11 w-11 rounded-[16px] bg-[linear-gradient(145deg,#f7ede3,#ead8c8)] text-[#6e4f3d] shadow-[0_10px_22px_rgba(125,95,72,0.10)] ring-1 ring-[#cfaf95]/32 sm:h-12 sm:w-12 sm:rounded-[18px]",
+          ? "h-12 w-12 rounded-[18px] bg-[linear-gradient(145deg,#e7f0ff,#dff4ff)] text-[#456a99] shadow-[0_12px_28px_rgba(86,132,196,0.14)] ring-1 ring-[#d9e8ff]/70 sm:h-14 sm:w-14 sm:rounded-[20px]"
+          : "h-11 w-11 rounded-[16px] bg-[linear-gradient(145deg,#f3f8ff,#ebf6ff)] text-[#53759f] shadow-[0_10px_22px_rgba(86,132,196,0.10)] ring-1 ring-[#d9e8ff]/50 sm:h-12 sm:w-12 sm:rounded-[18px]",
       ].join(" ")}
     >
       {children}
@@ -251,10 +251,10 @@ export default function LinktreeStyleProfile() {
   const appFontStyle = { fontFamily: '"Poppins", sans-serif' };
 
   const quickLinks = [
-    { href: whatsappHref, icon: <WhatsAppIcon className="h-5 w-5 text-[#7a5b47]" />, label: "WhatsApp" },
-    { href: profile.instagram, icon: <InstagramIcon className="h-5 w-5 text-[#7a5b47]" />, label: "Instagram" },
-    { href: profile.email, icon: <MailIcon className="h-5 w-5 text-[#7a5b47]" />, label: "Email" },
-    { href: profile.linkedin, icon: <LinkedInIcon className="h-5 w-5 text-[#7a5b47]" />, label: "LinkedIn" },
+    { href: whatsappHref, icon: <WhatsAppIcon className="h-5 w-5 text-[#5e7fa9]" />, label: "WhatsApp" },
+    { href: profile.instagram, icon: <InstagramIcon className="h-5 w-5 text-[#5e7fa9]" />, label: "Instagram" },
+    { href: profile.email, icon: <MailIcon className="h-5 w-5 text-[#5e7fa9]" />, label: "Email" },
+    { href: profile.linkedin, icon: <LinkedInIcon className="h-5 w-5 text-[#5e7fa9]" />, label: "LinkedIn" },
   ];
 
   const cards = [
@@ -291,21 +291,21 @@ export default function LinktreeStyleProfile() {
 
   return (
     <div
-      className="min-h-screen bg-[linear-gradient(180deg,#f8efe7_0%,#efe1d3_38%,#e3cdbb_100%)] px-3 py-4 font-[Poppins] sm:px-6 sm:py-10"
+      className="min-h-screen bg-[linear-gradient(180deg,#f4f8ff_0%,#edf4ff_34%,#eef8ff_68%,#f7fbff_100%)] px-3 py-4 font-[Poppins] sm:px-6 sm:py-10"
       style={appFontStyle}
     >
       <div className="mx-auto max-w-md sm:max-w-lg">
-        <div className="relative overflow-hidden rounded-[28px] border border-[#e5d2c2] bg-[linear-gradient(180deg,rgba(255,249,243,0.98),rgba(244,232,220,0.96))] p-4 shadow-[0_20px_50px_rgba(125,95,72,0.14)] backdrop-blur-xl sm:rounded-[36px] sm:p-7 sm:shadow-[0_28px_75px_rgba(125,95,72,0.16)]">
-          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,252,248,0.72),rgba(236,220,205,0.22)_46%,transparent_74%)]" />
+        <div className="relative overflow-hidden rounded-[28px] border border-[#dbe8fb] bg-[linear-gradient(180deg,rgba(255,255,255,0.95),rgba(241,247,255,0.93))] p-4 shadow-[0_20px_50px_rgba(92,136,198,0.12)] backdrop-blur-xl sm:rounded-[36px] sm:p-7 sm:shadow-[0_28px_75px_rgba(92,136,198,0.14)]">
+          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.88),rgba(221,235,255,0.34)_44%,transparent_74%)]" />
 
           <div className="relative z-10">
-            <div className="pointer-events-none absolute -right-16 -top-16 h-44 w-44 rounded-full bg-[radial-gradient(circle,_rgba(214,189,167,0.42),_transparent_70%)]" />
+            <div className="pointer-events-none absolute -right-16 -top-16 h-44 w-44 rounded-full bg-[radial-gradient(circle,_rgba(189,221,255,0.46),_transparent_70%)]" />
 
             <div className="mb-4 flex items-start justify-between">
-              <div className="h-11 w-11 rounded-full bg-[linear-gradient(145deg,#f5e9de,#ead7c6)] shadow-[0_8px_20px_rgba(125,95,72,0.10)] ring-1 ring-[#cfaf95]/26" />
+              <div className="h-11 w-11 rounded-full bg-[linear-gradient(145deg,#eef5ff,#e8f6ff)] shadow-[0_8px_20px_rgba(92,136,198,0.10)] ring-1 ring-[#d7e7ff]/55" />
               <button
                 type="button"
-                className="flex h-11 w-11 items-center justify-center rounded-full bg-[linear-gradient(145deg,#f7ede3,#ead8c8)] text-[#6e4f3d] shadow-[0_8px_20px_rgba(125,95,72,0.10)] ring-1 ring-[#cfaf95]/26 transition duration-300 hover:scale-105 hover:bg-[#fbf3eb]"
+                className="flex h-11 w-11 items-center justify-center rounded-full bg-[linear-gradient(145deg,#eef5ff,#e7f5ff)] text-[#53739c] shadow-[0_8px_20px_rgba(92,136,198,0.10)] ring-1 ring-[#d7e7ff]/55 transition duration-300 hover:scale-105 hover:bg-[#f6fbff]"
                 onClick={() => setAdminOpen((v) => !v)}
                 aria-label="Toggle admin panel"
               >
@@ -317,7 +317,7 @@ export default function LinktreeStyleProfile() {
             </div>
 
             {adminOpen && (
-              <div className="mb-6 rounded-[20px] border border-[#e3cdbb] bg-[linear-gradient(180deg,#f8efe7,#efdfd1)] p-3.5 shadow-[0_14px_30px_rgba(125,95,72,0.10)] sm:rounded-[24px] sm:p-4">
+              <div className="mb-6 rounded-[20px] border border-[#dce8fb] bg-[linear-gradient(180deg,#f7fbff,#eef5ff)] p-3.5 shadow-[0_14px_30px_rgba(92,136,198,0.10)] sm:rounded-[24px] sm:p-4">
                 {!isAdminLoggedIn ? (
                   <form onSubmit={handleAdminLogin} className="space-y-4">
                     <div>
@@ -329,7 +329,7 @@ export default function LinktreeStyleProfile() {
                         type="text"
                         value={loginForm.username}
                         onChange={(e) => setLoginForm({ ...loginForm, username: e.target.value })}
-                        className="mt-1 block w-full rounded-xl border border-[#dcc2ae] bg-[#fffaf5] px-3 py-2.5 text-sm text-[#5f4333] shadow-[0_6px_16px_rgba(125,95,72,0.06)] outline-none focus:border-[#b89274] focus:ring-2 focus:ring-[#d9bda7]/45"
+                        className="mt-1 block w-full rounded-xl border border-[#d8e6fa] bg-[#fdfefe] px-3 py-2.5 text-sm text-[#45617f] shadow-[0_6px_16px_rgba(92,136,198,0.06)] outline-none focus:border-[#7ea6d8] focus:ring-2 focus:ring-[#c7dbf7]/60"
                         style={appFontStyle}
                       />
                     </div>
@@ -342,14 +342,14 @@ export default function LinktreeStyleProfile() {
                         type="password"
                         value={loginForm.password}
                         onChange={(e) => setLoginForm({ ...loginForm, password: e.target.value })}
-                        className="mt-1 block w-full rounded-xl border border-[#dcc2ae] bg-[#fffaf5] px-3 py-2.5 text-sm text-[#5f4333] shadow-[0_6px_16px_rgba(125,95,72,0.06)] outline-none focus:border-[#b89274] focus:ring-2 focus:ring-[#d9bda7]/45"
+                        className="mt-1 block w-full rounded-xl border border-[#d8e6fa] bg-[#fdfefe] px-3 py-2.5 text-sm text-[#45617f] shadow-[0_6px_16px_rgba(92,136,198,0.06)] outline-none focus:border-[#7ea6d8] focus:ring-2 focus:ring-[#c7dbf7]/60"
                         style={appFontStyle}
                       />
                     </div>
                     {loginError && <p className="text-xs text-red-600">{loginError}</p>}
                     <button
                       type="submit"
-                      className="w-full rounded-xl bg-[linear-gradient(145deg,#b89274,#9f795d)] px-4 py-2.5 text-sm font-semibold text-[#fffaf5] shadow-[0_10px_22px_rgba(125,95,72,0.14)] transition duration-300 hover:-translate-y-0.5 hover:brightness-105"
+                      className="w-full rounded-xl bg-[linear-gradient(145deg,#7ea6d8,#5f87bb)] px-4 py-2.5 text-sm font-semibold text-[#fafdff] shadow-[0_10px_22px_rgba(92,136,198,0.14)] transition duration-300 hover:-translate-y-0.5 hover:brightness-105"
                       style={appFontStyle}
                     >
                       Log In
@@ -363,7 +363,7 @@ export default function LinktreeStyleProfile() {
                         type="checkbox"
                         checked={eventData.enabled}
                         onChange={(e) => setEventData({ ...eventData, enabled: e.target.checked })}
-                        className="h-5 w-5 rounded-md border border-[#dcc2ae] bg-[#fffaf5] text-[#9e7d63] focus:ring-2 focus:ring-[#d9bda7]/45"
+                        className="h-5 w-5 rounded-md border border-[#d8e6fa] bg-[#ffffff] text-[#6d95c6] focus:ring-2 focus:ring-[#c7dbf7]/60"
                       />
                       <label htmlFor="workshopEnabled" className="text-sm font-semibold text-[#110703]">
                         Show workshop tile
@@ -379,7 +379,7 @@ export default function LinktreeStyleProfile() {
                         type="text"
                         value={eventData.title}
                         onChange={(e) => setEventData({ ...eventData, title: e.target.value })}
-                        className="mt-1 block w-full rounded-xl border border-[#dcc2ae] bg-[#fffaf5] px-3 py-2.5 text-sm text-[#5f4333] shadow-[0_6px_16px_rgba(125,95,72,0.06)] outline-none focus:border-[#b89274] focus:ring-2 focus:ring-[#d9bda7]/45"
+                        className="mt-1 block w-full rounded-xl border border-[#d8e6fa] bg-[#fdfefe] px-3 py-2.5 text-sm text-[#45617f] shadow-[0_6px_16px_rgba(92,136,198,0.06)] outline-none focus:border-[#7ea6d8] focus:ring-2 focus:ring-[#c7dbf7]/60"
                         style={appFontStyle}
                       />
                     </div>
@@ -393,7 +393,7 @@ export default function LinktreeStyleProfile() {
                         type="text"
                         value={eventData.formLink}
                         onChange={(e) => setEventData({ ...eventData, formLink: e.target.value })}
-                        className="mt-1 block w-full rounded-xl border border-[#dcc2ae] bg-[#fffaf5] px-3 py-2.5 text-sm text-[#5f4333] shadow-[0_6px_16px_rgba(125,95,72,0.06)] outline-none focus:border-[#b89274] focus:ring-2 focus:ring-[#d9bda7]/45"
+                        className="mt-1 block w-full rounded-xl border border-[#d8e6fa] bg-[#fdfefe] px-3 py-2.5 text-sm text-[#45617f] shadow-[0_6px_16px_rgba(92,136,198,0.06)] outline-none focus:border-[#7ea6d8] focus:ring-2 focus:ring-[#c7dbf7]/60"
                         style={appFontStyle}
                       />
                     </div>
@@ -407,7 +407,7 @@ export default function LinktreeStyleProfile() {
                         rows={2}
                         value={eventData.info}
                         onChange={(e) => setEventData({ ...eventData, info: e.target.value })}
-                        className="mt-1 block w-full rounded-xl border border-[#dcc2ae] bg-[#fffaf5] px-3 py-2.5 text-sm text-[#5f4333] shadow-[0_6px_16px_rgba(125,95,72,0.06)] outline-none focus:border-[#b89274] focus:ring-2 focus:ring-[#d9bda7]/45"
+                        className="mt-1 block w-full rounded-xl border border-[#d8e6fa] bg-[#fdfefe] px-3 py-2.5 text-sm text-[#45617f] shadow-[0_6px_16px_rgba(92,136,198,0.06)] outline-none focus:border-[#7ea6d8] focus:ring-2 focus:ring-[#c7dbf7]/60"
                         style={appFontStyle}
                       />
                     </div>
@@ -416,14 +416,14 @@ export default function LinktreeStyleProfile() {
                       type="button"
                       onClick={handleSaveWorkshop}
                       disabled={isSavingEvent}
-                      className="mb-3 w-full rounded-xl bg-[linear-gradient(145deg,#b89274,#9f795d)] px-4 py-2.5 text-sm font-semibold text-[#fffaf5] shadow-[0_10px_22px_rgba(125,95,72,0.14)] transition duration-300 hover:-translate-y-0.5 hover:brightness-105 disabled:cursor-not-allowed disabled:opacity-70"
+                      className="mb-3 w-full rounded-xl bg-[linear-gradient(145deg,#7ea6d8,#5f87bb)] px-4 py-2.5 text-sm font-semibold text-[#fafdff] shadow-[0_10px_22px_rgba(92,136,198,0.14)] transition duration-300 hover:-translate-y-0.5 hover:brightness-105 disabled:cursor-not-allowed disabled:opacity-70"
                       style={appFontStyle}
                     >
                       {isSavingEvent ? "Saving..." : "Save workshop"}
                     </button>
 
                     {saveMessage ? (
-                      <p className="mb-3 text-center text-xs font-medium text-[#7d5b47]">
+                      <p className="mb-3 text-center text-xs font-medium text-[#5d7da5]">
                         {saveMessage}
                       </p>
                     ) : null}
@@ -435,7 +435,7 @@ export default function LinktreeStyleProfile() {
                           ...defaultEvent,
                         })
                       }
-                      className="mb-3 w-full rounded-xl bg-[#f6eadf] px-4 py-2.5 text-sm font-semibold text-[#7d5b47] shadow-[0_8px_18px_rgba(125,95,72,0.08)] transition duration-300 hover:-translate-y-0.5 hover:bg-[#f1dfd1]"
+                      className="mb-3 w-full rounded-xl bg-[#e9f3ff] px-4 py-2.5 text-sm font-semibold text-[#56759a] shadow-[0_8px_18px_rgba(92,136,198,0.08)] transition duration-300 hover:-translate-y-0.5 hover:bg-[#deecff]"
                       style={appFontStyle}
                     >
                       Clear workshop
@@ -444,7 +444,7 @@ export default function LinktreeStyleProfile() {
                     <button
                       type="button"
                       onClick={handleLogout}
-                      className="w-full rounded-xl bg-[linear-gradient(145deg,#b89274,#9f795d)] px-4 py-2.5 text-sm font-semibold text-[#fffaf5] shadow-[0_10px_22px_rgba(125,95,72,0.14)] transition duration-300 hover:-translate-y-0.5 hover:brightness-105"
+                      className="w-full rounded-xl bg-[linear-gradient(145deg,#7ea6d8,#5f87bb)] px-4 py-2.5 text-sm font-semibold text-[#fafdff] shadow-[0_10px_22px_rgba(92,136,198,0.14)] transition duration-300 hover:-translate-y-0.5 hover:brightness-105"
                       style={appFontStyle}
                     >
                       Logout
@@ -456,7 +456,7 @@ export default function LinktreeStyleProfile() {
 
             <div className="flex flex-col items-center text-center pt-1">
               <div className="relative">
-                <div className="absolute inset-0 scale-110 rounded-full bg-[radial-gradient(circle,_rgba(233,211,194,0.78),_rgba(196,162,138,0.20)_58%,_transparent_74%)] blur-xl" />
+                <div className="absolute inset-0 scale-110 rounded-full bg-[radial-gradient(circle,_rgba(204,225,255,0.72),_rgba(214,240,255,0.24)_58%,_transparent_74%)] blur-xl" />
                 <img
                   src={profile.photo}
                   alt={profile.name}
@@ -466,17 +466,17 @@ export default function LinktreeStyleProfile() {
 
               <h1
   className="mt-4 text-[1.35rem] font-bold leading-none tracking-[-0.03em] sm:mt-5 sm:text-[1.95rem] sm:whitespace-nowrap"
-  style={{ ...appFontStyle, color: "#4f3729" }}
+  style={{ ...appFontStyle, color: "#46658e" }}
 >
                 {profile.name}
               </h1>
               
-              <p className="mt-2 text-[0.9rem] font-semibold uppercase tracking-[0.16em] text-[#8b6851] sm:text-base sm:tracking-[0.22em]" style={appFontStyle}>{profile.title}</p>
+              <p className="mt-2 text-[0.9rem] font-semibold uppercase tracking-[0.16em] text-[#6785ad] sm:text-base sm:tracking-[0.22em]" style={appFontStyle}>{profile.title}</p>
               
 
               <div className="mt-5 flex flex-wrap items-center justify-center gap-2">
-                <span className="rounded-full bg-[#efe0d1] px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.16em] text-[#7b5a46] shadow-[0_8px_16px_rgba(125,95,72,0.08)] ring-1 ring-[#ddc4b1]/60" style={appFontStyle}>Available for bookings</span>
-                <span className="rounded-full bg-[#f4e8dc] px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.16em] text-[#7b5a46] shadow-[0_8px_16px_rgba(125,95,72,0.07)] ring-1 ring-[#e3cdbb]/60" style={appFontStyle}>Online</span>
+                <span className="rounded-full bg-[#eaf2ff] px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.16em] text-[#6483ab] shadow-[0_8px_16px_rgba(92,136,198,0.08)] ring-1 ring-[#d7e7ff]/70" style={appFontStyle}>Available for bookings</span>
+                <span className="rounded-full bg-[#e9f8ff] px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.16em] text-[#5b839b] shadow-[0_8px_16px_rgba(103,164,198,0.07)] ring-1 ring-[#d8eef7]/70" style={appFontStyle}>Online</span>
               </div>
 
               <div className="mt-6 flex flex-wrap items-center justify-center gap-2.5 sm:gap-3">
@@ -505,7 +505,7 @@ export default function LinktreeStyleProfile() {
                     href={card.href}
                     target={isMail ? "_self" : "_blank"}
                     rel="noreferrer"
-                    className="group block overflow-hidden rounded-[24px] border border-[#e3cdbb] bg-[linear-gradient(180deg,rgba(255,248,241,0.98),rgba(241,227,214,0.96))] p-3.5 shadow-[0_14px_30px_rgba(125,95,72,0.10)] ring-1 ring-[#c8a98f]/12 transition duration-300 hover:-translate-y-1 hover:border-[#d5b79e] hover:shadow-[0_24px_42px_rgba(125,95,72,0.14)] sm:rounded-[28px] sm:p-4 sm:hover:-translate-y-1.5"
+                    className="group block overflow-hidden rounded-[24px] border border-[#dbe8fb] bg-[linear-gradient(180deg,rgba(255,255,255,0.98),rgba(240,247,255,0.95))] p-3.5 shadow-[0_14px_30px_rgba(92,136,198,0.10)] ring-1 ring-[#d7e7ff]/20 transition duration-300 hover:-translate-y-1 hover:border-[#c8dbf6] hover:shadow-[0_24px_42px_rgba(92,136,198,0.14)] sm:rounded-[28px] sm:p-4 sm:hover:-translate-y-1.5"
                     style={appFontStyle}
                   >
                     <div className="flex items-start gap-3.5 sm:items-center sm:gap-4">
@@ -515,29 +515,29 @@ export default function LinktreeStyleProfile() {
                         <div className="mb-1 flex items-center gap-2">
                           <h2
                             className="truncate text-base font-semibold sm:text-[1.05rem]"
-                            style={{ ...appFontStyle, color: "#4f3729" }}
+                            style={{ ...appFontStyle, color: "#4b688f" }}
                           >
                             {card.label}
                           </h2>
                           {card.badge ? (
-                            <span className="rounded-full bg-[#ecd8c8] px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.16em] text-[#7e5d49] ring-1 ring-[#dcc2ae]/60" style={appFontStyle}>
+                            <span className="rounded-full bg-[#eaf2ff] px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.16em] text-[#6481a8] ring-1 ring-[#d7e7ff]/70" style={appFontStyle}>
                               {card.badge}
                             </span>
                           ) : null}
                         </div>
                         {card.description ? (
-                          <p className="text-[0.92rem] leading-5 sm:text-sm" style={{ ...appFontStyle, color: "#6f5442" }}>
+                          <p className="text-[0.92rem] leading-5 sm:text-sm" style={{ ...appFontStyle, color: "#6e82a1" }}>
                             {card.description}
                           </p>
                         ) : null}
                         {card.value ? (
-                          <p className="mt-1 break-all text-[0.92rem] font-medium leading-5 sm:text-sm" style={{ ...appFontStyle, color: "#7b5c49" }}>
+                          <p className="mt-1 break-all text-[0.92rem] font-medium leading-5 sm:text-sm" style={{ ...appFontStyle, color: "#5e7fa1" }}>
                             {card.value}
                           </p>
                         ) : null}
                       </div>
 
-                      <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[linear-gradient(145deg,#f1e3d6,#e4cbb7)] text-[#7a5b47] shadow-[0_6px_14px_rgba(125,95,72,0.08)] transition duration-300 group-hover:scale-105 group-hover:bg-[#9f795d] group-hover:text-[#fffaf5] sm:h-10 sm:w-10">
+                      <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[linear-gradient(145deg,#eaf2ff,#e6f6ff)] text-[#6280a8] shadow-[0_6px_14px_rgba(92,136,198,0.08)] transition duration-300 group-hover:scale-105 group-hover:bg-[#6f97cb] group-hover:text-[#ffffff] sm:h-10 sm:w-10">
                         <ChevronRightIcon className="h-5 w-5" />
                       </div>
                     </div>
